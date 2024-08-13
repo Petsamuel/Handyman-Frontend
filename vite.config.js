@@ -1,16 +1,16 @@
 import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 import ViteCapacitor from "vite-plugin-capacitor";
 
 export default defineConfig({
   plugins: [
+    react(),
     ViteCapacitor({
-      // This is the directory where Capacitor will look for web assets
-      webDir: "dist", // This should match the output directory of your Vite build
+      webDir: "dist",
     }),
   ],
   server: {
-    // This allows you to access the app on your local network
     host: true,
-    port: 5173, // Default Vite port
+    port: 5173,
   },
 });
